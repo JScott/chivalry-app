@@ -17,10 +17,7 @@ function preload(warcries) {
       if (percentage == 100) loadingElement.hidden = true;
       
       var buttonElement = document.getElementsByTagName('img')[0];
-      buttonElement.style.webkitFilter = 'grayscale('+(50-(percentage/2))+'%)';
-      buttonElement.style.filter = buttonElement.style.webkitFilter;
       buttonElement.style.opacity = 0.5+(percentage/50);
-      console.log(buttonElement.style.filter);
     }, false);
   }
 
