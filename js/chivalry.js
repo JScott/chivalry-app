@@ -23,7 +23,7 @@ window.onload = function() {
       var path = 'audio/'+type+'/'+index+'.ogg'
       var warcry = new Audio(path);
       warcry.addEventListener('canplaythrough', function() {
-        warcries.push(path);
+        warcries.push(warcry);
         loadingElement.innerText = (warcries.length/67*100)+'%';
         if (loadingElement.innerText == '100%') loadingElement.hidden = true;
       }, false);
@@ -31,13 +31,8 @@ window.onload = function() {
   }
 
   document.addEventListener("click", function() {
-    if (warcries.length == 0) {
-      alert("Loading audio, please try again soon...");
-      return;
-    }
     var random = randomBetween(0,warcries.length-1);
-    var warcryPath = warcries[random];
-    var warcry = new Audio(warcryPath);
+    var warcry = warcries[random];
     warcry.play();
   });
 }
