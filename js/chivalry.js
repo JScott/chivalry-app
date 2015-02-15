@@ -26,7 +26,8 @@ window.onload = function() {
   buttonElement.style.top = (height-buttonSize)/2+'px';
 
   document.addEventListener("click", function() {
-    var audio = new Audio(randomFile('animated'));
-    audio.play();
+    var warcryType = randomBetween(1,2) == 1 ? 'animated' : 'mobile';
+    var warcry = new Audio(randomFile(warcryType));
+    warcry.play();
   });
 }
