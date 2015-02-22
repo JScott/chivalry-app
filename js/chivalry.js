@@ -9,8 +9,8 @@ function updateLoader(percentage) {
 }
 
 function initializeButton() {
-  var width = window.screen.width;
-  var height = window.screen.height;
+  var width = window.innerWidth;
+  var height = window.innerHeight;
   var buttonSize = Math.min(width,height)*0.6;
   var buttonElement = document.getElementsByTagName('img')[0];
 
